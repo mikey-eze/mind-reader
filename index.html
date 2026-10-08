@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#09090f" />
+  <meta name="theme-color" content="#f3f0ea" />
   <meta name="description" content="MindLab — a playful mathematical age guessing game." />
   <title>MindLab — I Can Guess Your Age</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
   <div class="ambient" aria-hidden="true">
@@ -45,12 +45,10 @@
         <div id="progressLabel" class="progress-label">01 / 06</div>
       </div>
       <div class="progress"><span id="progressBar"></span></div>
-
       <article id="numberCard" class="number-card glass">
         <div class="card-top"><span id="cardPower">CARD 01</span><span id="cardHint">LOOK CLOSELY</span></div>
         <div id="numbers" class="numbers" aria-live="polite"></div>
       </article>
-
       <div class="question">
         <p>Is your age on this card?</p>
         <div class="answer-grid">
@@ -58,7 +56,6 @@
           <button id="noBtn" class="answer no">NO <span>×</span></button>
         </div>
       </div>
-
       <p class="small-note">Your choices are only used to calculate the result in this browser.</p>
     </section>
 
@@ -69,9 +66,7 @@
         <h2>Reconstructing your number…</h2>
         <p id="scanText">Reading the pattern you selected.</p>
         <div class="scan-progress"><span id="scanBar"></span></div>
-        <div class="scan-steps">
-          <span>✓ Pattern detected</span><span>✓ Binary values mapped</span><span>✓ Final value calculated</span>
-        </div>
+        <div class="scan-steps"><span>✓ Pattern detected</span><span>✓ Binary values mapped</span><span>✓ Final value calculated</span></div>
       </div>
     </section>
 
@@ -88,7 +83,6 @@
         </div>
         <button id="howBtn" class="text-btn">How did that work?</button>
       </div>
-
       <div id="howPanel" class="how-panel glass hidden">
         <div class="eyebrow">THE SECRET</div>
         <h3>It is binary math, dressed up as magic.</h3>
@@ -100,7 +94,6 @@
 
     <footer>MindLab · playful mathematics · 2026</footer>
   </main>
-
   <div id="toast" class="toast" role="status"></div>
   <script src="script.js"></script>
 </body>
