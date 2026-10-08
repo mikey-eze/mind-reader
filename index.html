@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#09090f" />
+  <meta name="description" content="MindLab — a playful mathematical age guessing game." />
+  <title>MindLab — I Can Guess Your Age</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-a"></span><span class="orb orb-b"></span>
+    <span class="grid"></span>
+  </div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◈</span><span>MindLab</span></div>
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle sound" title="Toggle sound">🔊</button>
+    </header>
+
+    <section id="home" class="screen active">
+      <div class="hero-card glass">
+        <div class="eyebrow">MIND READING EXPERIMENT</div>
+        <h1>I can guess<br /><span>your age.</span></h1>
+        <p class="lead">Don't type it. Don't say it. Just spot your age on a few cards and let the math do the suspicious-looking part.</p>
+        <button id="startBtn" class="primary-btn">Start the test <span>→</span></button>
+        <div class="micro-copy"><span class="dot"></span> No camera · No data collection · Just mathematics</div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature glass"><b>01</b><strong>See the cards</strong><span>Find your age.</span></div>
+        <div class="feature glass"><b>02</b><strong>Tap yes / no</strong><span>Six quick rounds.</span></div>
+        <div class="feature glass"><b>03</b><strong>Get revealed</strong><span>Feel the magic.</span></div>
+      </div>
+    </section>
+
+    <section id="game" class="screen">
+      <div class="game-head">
+        <div>
+          <div class="eyebrow">MINDLAB / AGE</div>
+          <h2>Does your age appear?</h2>
+        </div>
+        <div id="progressLabel" class="progress-label">01 / 06</div>
+      </div>
+      <div class="progress"><span id="progressBar"></span></div>
+
+      <article id="numberCard" class="number-card glass">
+        <div class="card-top"><span id="cardPower">CARD 01</span><span id="cardHint">LOOK CLOSELY</span></div>
+        <div id="numbers" class="numbers" aria-live="polite"></div>
+      </article>
+
+      <div class="question">
+        <p>Is your age on this card?</p>
+        <div class="answer-grid">
+          <button id="yesBtn" class="answer yes">YES <span>✓</span></button>
+          <button id="noBtn" class="answer no">NO <span>×</span></button>
+        </div>
+      </div>
+
+      <p class="small-note">Your choices are only used to calculate the result in this browser.</p>
+    </section>
+
+    <section id="scan" class="screen">
+      <div class="scan-card glass">
+        <div class="scanner"><div class="scanner-line"></div><div class="scan-core">◈</div></div>
+        <div class="eyebrow">ANALYSIS RUNNING</div>
+        <h2>Reconstructing your number…</h2>
+        <p id="scanText">Reading the pattern you selected.</p>
+        <div class="scan-progress"><span id="scanBar"></span></div>
+        <div class="scan-steps">
+          <span>✓ Pattern detected</span><span>✓ Binary values mapped</span><span>✓ Final value calculated</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-card glass">
+        <div class="result-badge">RESULT CONFIRMED</div>
+        <p class="result-kicker">Your secret number is</p>
+        <div id="ageResult" class="age-result">--</div>
+        <h2>You are <span id="ageText">--</span> years old.</h2>
+        <p class="result-caption">You never typed your age. The cards did the talking.</p>
+        <div class="result-actions">
+          <button id="againBtn" class="primary-btn">Play again <span>↻</span></button>
+          <button id="shareBtn" class="secondary-btn">Share result <span>↗</span></button>
+        </div>
+        <button id="howBtn" class="text-btn">How did that work?</button>
+      </div>
+
+      <div id="howPanel" class="how-panel glass hidden">
+        <div class="eyebrow">THE SECRET</div>
+        <h3>It is binary math, dressed up as magic.</h3>
+        <p>Each card represents a power of two: 1, 2, 4, 8, 16, and 32. Every age from 1 to 63 can be written as a combination of those values. Your YES cards are simply added together.</p>
+        <div id="equation" class="equation"></div>
+        <p class="small-note">The trick is old. The presentation is ours.</p>
+      </div>
+    </section>
+
+    <footer>MindLab · playful mathematics · 2026</footer>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
