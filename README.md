@@ -59,3 +59,6 @@ mind-reader/
 ## License
 
 Use, remix, and learn from it freely.
+
+
+<!-- GitHub Pages deployment trigger -->
